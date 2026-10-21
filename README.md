@@ -8,11 +8,11 @@ MCode runs every turn through magpie.
 ## Install
 
 ```sh
-magpie plugin add github:MCapricorns/magpie-agent-mycode
+magpie plugin add github:MCapricorns/magpie-mycode
 ```
 
 Or open **Plugins → Add a plugin** in the magpie app and paste the same
-`github:MCapricorns/magpie-agent-mycode` value.
+`github:MCapricorns/magpie-mycode` value.
 
 Then open **Agents**, pick **MCode**, and pick a model. MCode reads the binding
 when a session starts, so start a new session after switching.
