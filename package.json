@@ -1,0 +1,30 @@
+{
+  "name": "magpie-agent-mycode",
+  "version": "0.1.0",
+  "description": "magpie agent plugin: MCode reads its model and key from magpie's gateway",
+  "type": "module",
+  "main": "./agent.js",
+  "files": [
+    "agent.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "magpie",
+    "magpie-plugin",
+    "mycode",
+    "agent"
+  ],
+  "homepage": "https://github.com/MCapricorns/magpie-agent-mycode",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MCapricorns/magpie-agent-mycode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MCapricorns/magpie-agent-mycode/issues"
+  },
+  "license": "Apache-2.0",
+  "magpie": {
+    "agent": "./agent.js"
+  }
+}
