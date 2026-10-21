@@ -15,13 +15,13 @@
     "mycode",
     "agent"
   ],
-  "homepage": "https://github.com/MCapricorns/magpie-agent-mycode",
+  "homepage": "https://github.com/MCapricorns/magpie-mycode",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MCapricorns/magpie-agent-mycode.git"
+    "url": "git+https://github.com/MCapricorns/magpie-mycode.git"
   },
   "bugs": {
-    "url": "https://github.com/MCapricorns/magpie-agent-mycode/issues"
+    "url": "https://github.com/MCapricorns/magpie-mycode/issues"
   },
   "license": "Apache-2.0",
   "magpie": {
