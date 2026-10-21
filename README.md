@@ -32,6 +32,22 @@ and restores the keys it had before.
 Nothing else in `settings.json` is touched. Picking MYCode's own model again (or
 switching the row off) restores the three keys and removes `magpie.model`.
 
+## About `settings.json`
+
+MYCode reads the file as a **strict** document:
+
+- The `formatVersion`, `kind` and `revision` keys are part of the format.
+  magpie's surgical edit keeps them; a hand-written replacement must too.
+- Keys MYCode's build does not know — `providers`, `web` from older versions —
+  make the file read as damaged. MYCode then repairs it on the next start:
+  the previous bytes are kept beside it as `settings.json.broken-<nanos>` and
+  everything it still understands (including the whole `magpie` block) is
+  salvaged into the rewritten file. The retired keys are dropped.
+- MYCode owns the file's permissions (owner-only, protected DACL on Windows).
+  An external editor that replaces the file wholesale changes the ACL; MYCode
+  re-protects the file when it next republishes, without losing the `magpie`
+  block.
+
 ## What magpie's Library writes
 
 Because the plugin declares `library`, MYCode also accepts magpie's Library:

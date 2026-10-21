@@ -1,13 +1,24 @@
 // magpie agent plugin for MYCode.
 //
-// magpie writes three things into `~/.mycode/settings.json`:
+// magpie writes four keys into `~/.mycode/settings.json`:
 //   magpie.enabled  true while magpie serves the model
 //   magpie.baseUrl  the gateway, ending in /v1
 //   magpie.apiKey   the key magpie made for MYCode (counts under "mycode")
+//   magpie.model    the model picked in magpie (written by magpie itself,
+//                   at the key path `model` below)
 //
 // `agent.model` names the key magpie writes the picked model to; `connect`
 // returns the rest. MYCode reads the gateway's /v1/models list itself, so no
 // model catalog is written here.
+//
+// MYCode reads `settings.json` as a strict document: `formatVersion`, `kind`
+// and `revision` at the top level are part of the format, and keys its build
+// does not know (older `providers`, `web`) make the whole file read as
+// damaged. magpie's surgical write keeps unknown keys, so a file that still
+// carries them is repaired by MYCode on the next start: it salvages what it
+// knows (including everything under `magpie`) and drops the rest. Keep the
+// file clean of retired keys; MYCode restores the owner-only protected ACL
+// when it republishes.
 //
 // The Library block lets magpie own the rest of MYCode's context:
 //   instructions -> ~/.mycode/AGENTS.md
